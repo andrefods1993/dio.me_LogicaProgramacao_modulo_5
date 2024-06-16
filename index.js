@@ -20,7 +20,7 @@
 
     além disso, deve ter um método chamado atacar que deve atender os seguintes requisitos:
 
-    - exibir a mensagem: "o {tipo} atacou usando {ataque}")
+    - exibir a mensagem: ("o {tipo} atacou usando {ataque}")
     - aonde o {tipo} deve ser concatenando o tipo que está na propriedade da classe
     - e no {ataque} deve seguir uma descrição diferente conforme o tipo, seguindo a tabela abaixo:
 
@@ -69,10 +69,12 @@ const hero2 = new Hero("Aragorn", 35, "guerreiro");
 const hero3 = new Hero("Saruman", 140, "monge");
 const hero4 = new Hero("Uzumaki", 47, "ninja");
 
+// Array contendo as instâncias dos heróis
+const heroes = [hero1, hero2, hero3, hero4];
+
 // Loop para iterar sobre cada herói criado
-for (let i = 1; i <= 4; i++) {
-	// Usa eval para obter a referência do herói correspondente
-	let hero = eval(`hero${i}`);
-	console.log(`\nHeroi ${hero.name}:`); // Imprime o nome do herói
+for (let i = 0; i < heroes.length; i++) {
+	const hero = heroes[i];
+	console.log(`\nHerói ${hero.name}:`); // Imprime o nome do herói
 	console.log(hero.attack()); // Imprime a mensagem de ataque do herói
 }
